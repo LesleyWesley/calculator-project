@@ -1,0 +1,19 @@
+:root {
+  --clr-dark-bg: #333731;
+  --clr-light-bg: #A1A195;
+  --clr-accent: #FDB936;
+  --clr-screen-bg: #3C1619;
+  --clr-screen-num: #D00000;
+  --clr-operator-bg: #296B73;
+}
+
+body {
+  background-image: linear-gradient(130deg, var(--clr-screen-bg), var(--clr-screen-num));
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
