@@ -8,12 +8,106 @@
 }
 
 body {
-  background-image: linear-gradient(130deg, var(--clr-screen-bg), var(--clr-screen-num));
+  background-image: url("../img/pencil-bg.jpg");
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
+}
+
+.calculator-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-dark-bg);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  max-width: 325px;
+  box-shadow: 0 5px 10px #000;
+}
+
+.calculator-inner {
+  border: 3px var(--clr-accent) solid;
+  border-radius: .5rem;
+  padding: 1rem;
+  background-color: var(--clr-light-bg);
+}
+
+.screen {
+  background-color: var(--clr-screen-bg);
+  border: 3px var(--clr-dark-bg) solid;
+  padding: .5rem;
+  color: var(--clr-screen-num);
+  border-radius: .5rem;
+  text-align: right;
+  font-size: 3.25rem;
+  font-family: "Orbitron", sans-serif;
+  margin-bottom: 1.75rem;
+}
+
+.button-section {
+  background-color: var(--clr-dark-bg);
+  padding: .75rem;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.number-operator-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  font-family: "Teko", sans-serif;
+  padding: .25rem;
+  width: 2.75rem;
+  height: 3rem;
+  font-size: 2.75rem;
+  border-radius: .25rem;
+  margin: .5rem;
+  color: #FFF;
+  box-shadow: 0 5px 10px #000;
+  background-color: var(--clr-light-bg);
+}
+
+button:active {
+  transform: scale(.9);
+}
+
+.clear-section {
+  width: 48%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clear-section button {
+  font-size: 2rem;
+  height: 2.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.75rem;
+  background-color: var(--clr-accent);
+}
+
+.number-operator-buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.operator-button {
+  background-color: var(--clr-operator-bg);
 }
