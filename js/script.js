@@ -86,6 +86,32 @@ zeroButton.addEventListener("click", function() {
   updateDisplay();
 })
 
+document.addEventListener("keydown", function (e) {
+  if (e.key === "0") {
+    displayArray.push("0");
+  } else if (e.key === "1") {
+    displayArray.push("1");
+  } else if (e.key === "2") {
+    displayArray.push("2");
+  } else if (e.key === "3") {
+    displayArray.push("3");
+  } else if (e.key === "4") {
+    displayArray.push("4");
+  } else if (e.key === "5") {
+    displayArray.push("5");
+  } else if (e.key === "6") {
+    displayArray.push("6");
+  } else if (e.key === "7") {
+    displayArray.push("7");
+  } else if (e.key === "8") {
+    displayArray.push("8");
+  } else if (e.key === "9") {
+    displayArray.push("9");
+  }
+
+  updateDisplay();
+})
+
 //==============================================================
 
 //Basic math functions
