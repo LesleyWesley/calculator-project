@@ -16,6 +16,7 @@
   const eightButton = document.querySelector(".eight");
   const nineButton = document.querySelector(".nine");
   const zeroButton = document.querySelector(".zero");
+  const decimalButton = document.querySelector(".decimal");
 
 //Variables for operator buttons
   const addButton = document.querySelector(".plus");
@@ -86,6 +87,11 @@ zeroButton.addEventListener("click", function() {
   updateDisplay();
 })
 
+decimalButton.addEventListener("click", function () {
+  displayArray.push(".");
+  updateDisplay();
+})
+
 document.addEventListener("keydown", function (e) {
   if (e.key === "0") {
     displayArray.push("0");
@@ -107,9 +113,75 @@ document.addEventListener("keydown", function (e) {
     displayArray.push("8");
   } else if (e.key === "9") {
     displayArray.push("9");
+  } else if (e.key === ".") {
+    displayArray.push(".");
+  } else {
+    return displayArray;
   }
 
   updateDisplay();
+})
+
+//==============================================================
+
+//Functions and event handlers for operator buttons
+let firstNum;
+let secondNum;
+let operator;
+
+const storeFirstNum = function () {
+  firstNum = Number(displayArray.join(""));
+  displayArray = [];
+}
+
+addButton.addEventListener("click", function () {
+  storeFirstNum();
+  operator = "add";
+})
+
+subtractButton.addEventListener("click", function () {
+  storeFirstNumber();
+  operator = "subtract";
+})
+
+multiplyButton.addEventListener("click", function () {
+  storeFirstNumber();
+  operator = "multiply";
+})
+
+divideButton.addEventListener("click", function () {
+  storeFirstNumber();
+  operator = "divide";
+})
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "+") {
+    storeFirstNumber();
+    operator = "add";
+  } else if (e.key === "-") {
+    storeFirstNumber();
+    operator = "subtract";
+  } else if (e.key === "*") {
+    storeFirstNumber();
+    operator = "multiply";
+  } else if (e.key === "/") {
+    storeFirstNumber();
+    operator = "divide";
+  } else {
+    return displayArray;
+  }
+})
+
+//==============================================================
+
+//Functions to clear screen
+
+clearAll.addEventListener("click", function () {
+  displayArray = [];
+  screenDisplay.innerText = "0";
+  firstNum = 0;
+  secondNum = 0;
+  operator = null;
 })
 
 //==============================================================
