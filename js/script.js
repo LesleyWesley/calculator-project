@@ -128,48 +128,111 @@ document.addEventListener("keydown", function (e) {
 let firstNum;
 let secondNum;
 let operator;
+let total = 0;
 
 const storeFirstNum = function () {
   firstNum = Number(displayArray.join(""));
   displayArray = [];
 }
 
+const operateAdd = function () {
+  if (operator != null) {
+    firstNum = total;
+    operator = "add";
+    displayArray = [];
+  } else {
+    storeFirstNum();
+    operator = "add";
+    console.log(firstNum);
+  }
+}
+
+const operateSubtract = function () {
+  if (operator != null) {
+    firstNum = total;
+    operator = "subtract";
+    displayArray = [];
+  } else {
+    storeFirstNum();
+    operator = "subtract";
+  }
+}
+
+const operateMultiply = function () {
+  if (operator != null) {
+    firstNum = total;
+    operator = "multiply";
+    displayArray = [];
+  } else {
+    storeFirstNum();
+    operator = "multiply";
+  }
+}
+
+const operateDivide = function () {
+  if (operator != null) {
+    firstNum = total;
+    operator = "divide";
+    displayArray = [];
+  } else {
+    storeFirstNum();
+    operator = "divide";
+  }
+}
+
 addButton.addEventListener("click", function () {
-  storeFirstNum();
-  operator = "add";
+  operateAdd();
 })
 
 subtractButton.addEventListener("click", function () {
-  storeFirstNumber();
-  operator = "subtract";
+  operateSubtract();
 })
 
 multiplyButton.addEventListener("click", function () {
-  storeFirstNumber();
-  operator = "multiply";
+  operateMultiply();
 })
 
 divideButton.addEventListener("click", function () {
-  storeFirstNumber();
-  operator = "divide";
+  operateDivide();
 })
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "+") {
-    storeFirstNumber();
-    operator = "add";
+    operateAdd();
   } else if (e.key === "-") {
-    storeFirstNumber();
-    operator = "subtract";
+    operateSubtract();
   } else if (e.key === "*") {
-    storeFirstNumber();
-    operator = "multiply";
+    operateMultiply();
   } else if (e.key === "/") {
-    storeFirstNumber();
-    operator = "divide";
+    operateDivide();
   } else {
     return displayArray;
   }
+})
+
+//==============================================================
+
+//Functions and event handlers to evaluate math problems
+//Needs work
+
+const operate = function () {
+  secondNum = Number(displayArray.join(""));
+
+  if (operator === "add") {
+    total = add(firstNum, secondNum);
+  } else if (operator === "subtract") {
+    total = subtract(firstNum, secondNum);
+  } else if (operator === "multiply") {
+    total = multiply(firstNum, secondNum);
+  } else if (operator === "divide") {
+    total = divide(firstNum, secondNum);
+  }
+
+  screenDisplay.innerText = `${total}`;
+}
+
+equalsButton.addEventListener("click", function () {
+  operate();
 })
 
 //==============================================================
@@ -187,6 +250,7 @@ clearAll.addEventListener("click", function () {
 const backspaceFunction = function () {
   if (displayArray.length <= 1) {
     screenDisplay.innerText = "0";
+    displayArray = [];
   } else {
     displayArray.pop();
     updateDisplay();
