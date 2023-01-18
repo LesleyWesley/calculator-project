@@ -219,13 +219,13 @@ const operate = function () {
   secondNum = Number(displayArray.join(""));
 
   if (operator === "add") {
-    total = add(firstNum, secondNum);
+    total = add(firstNum, secondNum).toFixed(2);
   } else if (operator === "subtract") {
-    total = subtract(firstNum, secondNum);
+    total = subtract(firstNum, secondNum).toFixed(2);
   } else if (operator === "multiply") {
-    total = multiply(firstNum, secondNum);
+    total = multiply(firstNum, secondNum).toFixed(2);
   } else if (operator === "divide") {
-    total = divide(firstNum, secondNum);
+    total = divide(firstNum, secondNum).toFixed(2);
   }
 
   screenDisplay.innerText = `${total}`;
