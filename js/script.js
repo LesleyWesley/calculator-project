@@ -3,7 +3,7 @@
 
 //Variables for clear buttons
   const clearAll = document.querySelector(".ac");
-  const clear = document.querySelector(".clear-button");
+  const backspace = document.querySelector(".backspace");
 
 //Variables for number buttons
   const oneButton = document.querySelector(".one");
@@ -182,6 +182,25 @@ clearAll.addEventListener("click", function () {
   firstNum = 0;
   secondNum = 0;
   operator = null;
+})
+
+const backspaceFunction = function () {
+  if (displayArray.length <= 1) {
+    screenDisplay.innerText = "0";
+  } else {
+    displayArray.pop();
+    updateDisplay();
+  }
+}
+
+backspace.addEventListener("click", function () {
+  backspaceFunction();
+})
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Backspace") {
+    backspaceFunction();
+  }
 })
 
 //==============================================================
