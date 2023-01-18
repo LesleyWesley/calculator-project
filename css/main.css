@@ -124,3 +124,10 @@ button:active {
 .operator-button {
   background-color: var(--clr-operator-bg);
 }
+
+.epilogue {
+  position: absolute;
+  bottom: 0;
+  font-family: "Teko", sans-serif;
+  color: var(--clr-dark-bg);
+}
