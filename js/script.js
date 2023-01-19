@@ -212,13 +212,12 @@ document.addEventListener("keydown", function (e) {
 //==============================================================
 
 //Functions and event handlers to evaluate math problems
-//Needs work
 
 const operate = function () {
   secondNum = Number(displayArray.join(""));
 
   if (operator === "add") {
-    total = add(firstNum, secondNum).toFixed(2);
+    total = add(firstNum, secondNum);
   } else if (operator === "subtract") {
     total = subtract(firstNum, secondNum).toFixed(2);
   } else if (operator === "multiply") {
