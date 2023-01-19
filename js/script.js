@@ -143,7 +143,6 @@ const operateAdd = function () {
   } else {
     storeFirstNum();
     operator = "add";
-    console.log(firstNum);
   }
 }
 
@@ -233,6 +232,13 @@ const operate = function () {
 
 equalsButton.addEventListener("click", function () {
   operate();
+})
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    operate();
+  }
 })
 
 //==============================================================
